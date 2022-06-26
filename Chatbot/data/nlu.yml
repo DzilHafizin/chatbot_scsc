@@ -1,0 +1,113 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - assalamualaikum
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: size
+  examples: |
+    - South China Sea ?
+    - what is South China Sea ?
+    - how big is South China Sea ?
+    - what is the South China Sea size ?
+    - how large is South China Sea ?
+
+- intent: country
+  examples: |
+    - Which country involved in this South China Sea ?
+    - What are the countries that surrounded the South China Sea ?
+    - What are the countries that involved with the South China Sea ?
+    - How many country that involved with the South China Sea ?
+
+- intent: conflict
+  examples: |
+    - South China Sea Conflict ?
+    - what is the conflict of South China Sea ?
+    - what is the general idea of the South China Sea conflict ?

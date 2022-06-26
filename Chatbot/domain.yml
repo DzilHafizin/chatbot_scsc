@@ -1,0 +1,63 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - size
+  - conflict
+  - country
+
+responses:
+  utter_greet:
+  - text: "Hello there, how may I help you ?"
+    buttons:
+    - title: "History"
+      payload: "/conflict"
+    - title: "Involved Country"
+      payload: "/country"
+    - title: "South China Sea Area"
+      payload: "/size"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "See you later, feel free to start chat again"
+
+  utter_iamabot:
+  - text: "I am a chatbot that focus on the South China Sea Conflict."
+
+  utter_conflict:
+  - text: "This conflict of South China Sea is coming from the famous nine-dashed line that claimed by China itself. The nine-dashed
+    line is a historical claim by China as their history rights. But this has been rejected as it does not comply with the international 
+    law and UNCLOS. Then the rights and all claims of the maritime on the South China Sea is resolved according to the principles and 
+    rules of UNCLOS. Regardless of the rights and claims, China still reluctant to accept it as they stated that their territorial 
+    sovereignty, maritime rights and interests in the South China Sea are established in the long course of history."
+    image: "https://www.benarnews.org/english/news/philippine/9-dash.jpg"
+
+  utter_size:
+  - text: "South China Sea is covered around 3.5 million kilometre squared. This South China Sea is neighbouring by Brunei, Cambodia, 
+    China, Indonesia, Malaysia, the Philippines Singapore, Taiwan, Thailand and Vietnam. It bounded from the northeast of Taiwan to the
+    east coast of Malaysia which is the southern boundary of the South China Sea."
+    image: "https://lh6.googleusercontent.com/rLZsBSVFauAZhlaMnhDyP8RqriQQabbYosixOHU8yN0Aq8UiB7ID9lVf_SVoxRXoJOYm5m41kyGNlLyWzBoTTC219VN0UshBpGLfssYFyYoNZRrhWKH-u9ckQjCmF9KTuGQvLqQ"
+
+  utter_country:
+  - text: "The South China Sea is bordered by ten countries which is Brunei, Cambodia, China, Indonesia, Malaysia, the Philippines, 
+    Singapore, Taiwan, Thailand and Vietnam."
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.forbes.com%2Fsites%2Foutofasia%2F2017%2F08%2F22%2Fmaking-sense-of-the-south-china-sea-dispute%2F&psig=AOvVaw3bIdhcPmUse5EtrmK6doRu&ust=1650066995210000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDmrNvglPcCFQAAAAAdAAAAABAD"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
