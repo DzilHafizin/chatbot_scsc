@@ -1,46 +1,21 @@
-require('dotenv').config()
-const cors = require('cors')
 const express = require('express')
-const morgan = require('morgan')
-const app = express()
 const mongoose = require('mongoose')
+const router = require('./routes/user-routes')
+const cors = require('cors')
+const app = express()
+const cookieParser = require('cookie-parser')
 
-//ROUTES
-const auth = require('./routes/auth')
-
-//MIDDLEWARE
-app.use(cors())
+app.use(cors({credentials: true, origin: "http://localhost:3000"}))
+app.use(cookieParser())
 app.use(express.json())
+app.use('/api', router)
 
-//MORGAN
-if(process.env.NODE_ENV !== 'production') {
-    app.use(morgan('dev'))
-}
-
-
-
-
-app.get('/', (req, res) => {
-    res.send('Welcome to SCSC Chatbot Backend')
-})
-
-app.get('/hello', (req, res) => { 
-    res.send('hello world')
-})
-
-app.use('/api/v1/auth',auth)
-
-const port = process.env.PORT || 5000 //connection port
-
-
-
-
-
-const start = async() => {
-    await mongoose.connect(process.env.MONGO_URL)
-    app.listen(port, () => {
-        console.log(`Server is running on port ${port}`)
+mongoose
+    .connect(
+        "mongodb+srv://dzilhafizin:dzil123@cluster0.bupyx.mongodb.net/?retryWrites=true&w=majority"
+    )
+    .then(() => {
+        app.listen(5000)
+        console.log("Database is connected! Listening to localhost 5000")
     })
-}
-
-start()
+    .catch((err) => console.log(err))

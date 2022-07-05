@@ -1,12 +1,29 @@
+import React from 'react';
 import './App.css';
-import Basic from "./components/Basic"
+import Header from './components/Header';
+import Login from './components/Login';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
+import Chatbot from './components/Chatbot';
+import { Routes, Route } from 'react-router-dom'
 
-function App() {
+function App () {
   return (
-    <div className="App">
-      <h1>Shreyas</h1>
-      <Basic />
-    </div>
+    <React.Fragment>
+      {/* <header>
+        <Header />
+      </header> */}
+      
+      {/* <main> */}
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/chatbot" element={<Chatbot />} />
+        </Routes>
+      {/* </main> */}
+      
+    </React.Fragment>
   );
 }
 
