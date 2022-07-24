@@ -1,41 +1,163 @@
 version: "3.1"
 
 stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - story: learn the conflict
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: size
+      - action: utter_size
+      - intent: country
+      - action: utter_country
+      - intent: conflict
+      - action: utter_conflict
+      - intent: localconflict
+      - action: utter_local
+      - intent: anothertopic
+      - action: utter_topic
 
-- story: learn the conflict
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: size
-  - action: utter_size
-  - intent: country
-  - action: utter_country
-  - intent: conflict
-  - action: utter_conflict
+  - story: request topic
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: size
+      - action: utter_size
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: country
+      - action: utter_country
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: conflict
+      - action: utter_conflict
+      - intent: anothertopic
+      - action: utter_topic
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - story: request topic1
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: size
+      - action: utter_size
+      - intent: country
+      - action: utter_country
+      - intent: conflict
+      - action: utter_conflict
+      - intent: localconflict
+      - action: utter_local
+      - intent: goodbye
+      - action: utter_goodbye
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - story: request topic2
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: country
+      - action: utter_country
+      - intent: size
+      - action: utter_size
+      - intent: conflict
+      - action: utter_conflict
+      - intent: localconflict
+      - action: utter_local
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: request topic3
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: conflict
+      - action: utter_conflict
+      - intent: country
+      - action: utter_country
+      - intent: size
+      - action: utter_size
+      - intent: localconflict
+      - action: utter_local
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: request topic after
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: conflict
+      - action: utter_conflict
+      - intent: country
+      - action: utter_country
+      - intent: size
+      - action: utter_size
+      - intent: localconflict
+      - action: utter_local
+      - intent: anothertopic
+      - action: utter_topic
+
+  - story: request topic after1
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: country
+      - action: utter_country
+      - intent: size
+      - action: utter_size
+      - intent: conflict
+      - action: utter_conflict
+      - intent: localconflict
+      - action: utter_local
+      - intent: anothertopic
+      - action: utter_topic
+
+  - story: request topic after2
+    steps:
+      - intent: anothertopic
+      - action: utter_topic
+      - intent: size
+      - action: utter_size
+      - intent: country
+      - action: utter_country
+      - intent: conflict
+      - action: utter_conflict
+      - intent: localconflict
+      - action: utter_local
+      - intent: anothertopic
+      - action: utter_topic
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye

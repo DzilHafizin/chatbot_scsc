@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import {
     Card,
     Form,
@@ -11,7 +11,7 @@ import {
 } from 'reactstrap'
 import {
     browserSessionPersistence,
-    sendPasswordResetEmail,
+    // sendPasswordResetEmail,
     setPersistence,
     signInWithEmailAndPassword,
 } from "firebase/auth";
@@ -26,18 +26,18 @@ const Login = () => {
         password: ''
     })
 
-    const sendRequest = async() => {
-        const { email, password } = values
+    // const sendRequest = async() => {
+    //     const { email, password } = values
 
-        const res = axios.post('http://localhost:5000/api/login',{
-            email,
-            password
-        }).catch(err => console.log(err))
+    //     const res = axios.post('http://localhost:5000/api/login',{
+    //         email,
+    //         password
+    //     }).catch(err => console.log(err))
 
-        const data = await res.data
+    //     const data = await res.data
 
-        return data
-    }
+    //     return data
+    // }
 
     const handleChange = e => {
         setValues(prev => ({
@@ -48,6 +48,9 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
+        if(values.email === '' || values.password === '')
+            return alert("Please fill in all the form")
 
         function loginHandler() {
             return new Promise((resolve) => {
@@ -60,6 +63,7 @@ const Login = () => {
                     })
                     .catch((err) => {
                       console.log(err);
+                      return alert("Wrong Email or Password")
                     });
                 })
                 .catch((err) => {
@@ -81,7 +85,7 @@ const Login = () => {
         <header>
         <nav className='position-sticky navbar navbar-expand bg-dark'>
             <div className='container-fluid'>
-                <a className='navbar-brand ' href='/#'>South China Sea Conflict Chatbot</a>
+                <a className='navbar-brand '>South China Sea Conflict Chatbot</a>
                 <div>
                     {/* <Link to="/">
                         <Button className='mx-2' size='sm' name='login'>Chatbot</Button>

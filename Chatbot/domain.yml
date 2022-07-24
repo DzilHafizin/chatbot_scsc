@@ -11,6 +11,8 @@ intents:
   - size
   - conflict
   - country
+  - anothertopic
+  - localconflict
 
 responses:
   utter_greet:
@@ -22,6 +24,20 @@ responses:
       payload: "/country"
     - title: "South China Sea Area"
       payload: "/size"
+    - title: "Conflict in Malaysia"
+      payload: "/localconflict"
+
+  utter_topic:
+  - text: "Here is the available topics: "
+    buttons:
+    - title: "History"
+      payload: "/conflict"
+    - title: "Involved Country"
+      payload: "/country"
+    - title: "South China Sea Area"
+      payload: "/size"
+    - title: "Conflict in Malaysia"
+      payload: "/localconflict"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -51,12 +67,21 @@ responses:
   - text: "South China Sea is covered around 3.5 million kilometre squared. This South China Sea is neighbouring by Brunei, Cambodia, 
     China, Indonesia, Malaysia, the Philippines Singapore, Taiwan, Thailand and Vietnam. It bounded from the northeast of Taiwan to the
     east coast of Malaysia which is the southern boundary of the South China Sea."
-    image: "https://lh6.googleusercontent.com/rLZsBSVFauAZhlaMnhDyP8RqriQQabbYosixOHU8yN0Aq8UiB7ID9lVf_SVoxRXoJOYm5m41kyGNlLyWzBoTTC219VN0UshBpGLfssYFyYoNZRrhWKH-u9ckQjCmF9KTuGQvLqQ"
+    image: "https://imageio.forbes.com/blogs-images/outofasia/files/2017/08/South-China-Sea-02.jpg?format=jpg&width=960"
 
   utter_country:
   - text: "The South China Sea is bordered by ten countries which is Brunei, Cambodia, China, Indonesia, Malaysia, the Philippines, 
     Singapore, Taiwan, Thailand and Vietnam."
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.forbes.com%2Fsites%2Foutofasia%2F2017%2F08%2F22%2Fmaking-sense-of-the-south-china-sea-dispute%2F&psig=AOvVaw3bIdhcPmUse5EtrmK6doRu&ust=1650066995210000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDmrNvglPcCFQAAAAAdAAAAABAD"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/South_China_Sea_claims_map.svg/800px-South_China_Sea_claims_map.svg.png"
+
+  utter_local:
+  - text: "Fighter jets were scrambled to intercept the transport planes on Monday after detecting suspicious activity over the South China Sea. 
+    Malaysia's foreign ministry described the manoeuvre as a serious threat to national sovereignty. China, however, said its aircraft 
+    had abided by international law.Malaysia, the Philippines, Brunei, Taiwan and Vietnam all contest China's claim to almost all of the 
+    South China Sea. The row has rumbled on for decades but tensions have increased in recent years. Beijing continues to claim an area 
+    known as the nine-dash line and has backed its claim with island-building and patrols, expanding its military presence while 
+    maintaining that its intentions are peaceful."
+    image: "https://ichef.bbci.co.uk/news/976/cpsprodpb/6551/production/_118773952_gettyimages-619202608.jpg"
 
 session_config:
   session_expiration_time: 60

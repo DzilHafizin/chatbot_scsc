@@ -111,3 +111,24 @@ nlu:
     - South China Sea Conflict ?
     - what is the conflict of South China Sea ?
     - what is the general idea of the South China Sea conflict ?
+
+- intent: anothertopic
+  examples: |
+    - Can I have another topics ?
+    - Can I have another topics
+    - Can i have another topics ?
+    - Can i have another topics
+    - can I have another topics ?
+    - can I have another topics
+    - can i have another topics ?
+    - can i have another topics 
+    - what is other topics ?
+    - what is other topics 
+    - What is other topics ?
+    - What is other topics
+
+- intent: localconflict
+  examples: |
+    - what is conflict that happened in Malaysia ?
+    - what is the local conflict that occur ?
+    - what is the conflict that occur in Malaysia ?

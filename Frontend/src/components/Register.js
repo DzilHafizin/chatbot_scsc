@@ -17,7 +17,8 @@ const Register = () => {
     const navigate = useNavigate()
 
     const [values, setValues] = useState({
-        name: '',
+        fname: '',
+        lname: '',
         email: '',
         password: ''
     })
@@ -29,7 +30,7 @@ const Register = () => {
             name,
             email,
             password
-        }).catch((err) => console.log(err))
+        })
 
         const data = await res.data
 
@@ -43,10 +44,11 @@ const Register = () => {
         }))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
+        console.log(values)
         
-        if(values.email === '' || values.name === '' || values.password === '')
+        if(values.email === '' || values.fname === '' || values.lname === '' || values.password === '')
             return alert("Please fill in all the form")
 
         function createNewUser() {
@@ -66,7 +68,7 @@ const Register = () => {
         function updateDisplayname(user) {
             return new Promise((resolve) => {
               updateProfile(user, {
-                displayName: values.name,
+                displayName: values.fname
               })
                 .then(() => {
                   console.log("Updated username");
@@ -77,20 +79,27 @@ const Register = () => {
                 });
             });
         }
-      
-        createNewUser()
-            .then((user) => {
-                return updateDisplayname(user);
+
+        // await axios.post('http://localhost:5000/register', {
+        //     firstName: values.fname,
+        //     lastName: values.lname,
+        //     email: values.email
+        // }).then(() => {
+            createNewUser()
+        // })
+        .then((user) => {
+            return updateDisplayname(user);
+        })
+        .then( async() => {
+            await axios.post('http://localhost:5000/register', {
+                firstName: values.fname,
+                lastName: values.lname,
+                email: values.email
             })
-            .then((user) => {
-                navigate(`/`);
-                // setUsername("");
-                // setEmail("");
-                // setPassword("");
-                // setUsernameTouched(false);
-                // setEmailTouched(false);
-                // setPasswordTouched(false);
-            });
+        })
+        .then((user) => {
+            navigate(`/`);
+        });
 
         // sendRequest().then(() => navigate("/")).catch(err => console.log(err))
     }
@@ -100,7 +109,7 @@ const Register = () => {
         <header>
         <nav className='position-sticky navbar navbar-expand bg-dark'>
             <div className='container-fluid'>
-                <a className='navbar-brand ' href='/#'>South China Sea Conflict Chatbot</a>
+                <a className='navbar-brand '>South China Sea Conflict Chatbot</a>
                 <div>
                     {/* <Link to="/">
                         <Button className='mx-2' size='sm' name='login'>Chatbot</Button>
@@ -129,8 +138,8 @@ const Register = () => {
                                 <Col>
                                     <Input className='mb-2' 
                                         type='text' 
-                                        placeholder='Name' 
-                                        name='name'
+                                        placeholder='Firstname' 
+                                        name='fname'
                                         onChange={handleChange}
                                     />
                                 </Col>
@@ -139,7 +148,7 @@ const Register = () => {
                                     <Input className='mb-2' 
                                         type='text' 
                                         placeholder='Lastname' 
-                                        name='name'
+                                        name='lname'
                                         onChange={handleChange}
                                     />
                                 </Col>

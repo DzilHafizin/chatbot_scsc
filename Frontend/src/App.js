@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header';
+// import Header from './components/Header';
+import Update from './components/Update';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
@@ -20,6 +21,7 @@ function App () {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="/update" element={<Update />} />
         </Routes>
       {/* </main> */}
       
